@@ -1,0 +1,16 @@
+D:\Map\Codes\Hangman\Hangman\bin\Debug\Hangman.exe.config
+D:\Map\Codes\Hangman\Hangman\bin\Debug\Hangman.exe
+D:\Map\Codes\Hangman\Hangman\bin\Debug\Hangman.pdb
+D:\Map\Codes\Hangman\Hangman\obj\Debug\Hangman.csproj.AssemblyReference.cache
+D:\Map\Codes\Hangman\Hangman\obj\Debug\Hangman.csproj.SuggestedBindingRedirects.cache
+D:\Map\Codes\Hangman\Hangman\obj\Debug\MainWindow.g.cs
+D:\Map\Codes\Hangman\Hangman\obj\Debug\App.g.cs
+D:\Map\Codes\Hangman\Hangman\obj\Debug\Hangman_MarkupCompile.cache
+D:\Map\Codes\Hangman\Hangman\obj\Debug\Hangman_MarkupCompile.lref
+D:\Map\Codes\Hangman\Hangman\obj\Debug\MainWindow.baml
+D:\Map\Codes\Hangman\Hangman\obj\Debug\Hangman.g.resources
+D:\Map\Codes\Hangman\Hangman\obj\Debug\Hangman.Properties.Resources.resources
+D:\Map\Codes\Hangman\Hangman\obj\Debug\Hangman.csproj.GenerateResource.cache
+D:\Map\Codes\Hangman\Hangman\obj\Debug\Hangman.csproj.CoreCompileInputs.cache
+D:\Map\Codes\Hangman\Hangman\obj\Debug\Hangman.exe
+D:\Map\Codes\Hangman\Hangman\obj\Debug\Hangman.pdb

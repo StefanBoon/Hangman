@@ -1,0 +1,199 @@
+﻿<Window x:Class="Hangman.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Hangman"
+        WindowStartupLocation="CenterScreen"
+        mc:Ignorable="d"
+        MinHeight="480" MinWidth="900" Height="500" Width="900"
+        Icon="hangman_icon1.ico"
+        Title="Hangman Man">
+    
+    <Grid x:Name="Grid" Background="#0F0F2D">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="800*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="gameStart" FontWeight="SemiBold" Content="Start Game" HorizontalAlignment="Center" Margin="0,22,0,0" VerticalAlignment="Top" Click="gameStart_Click" Foreground="White" FontSize="33" Height="55" Width="180">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="TextElement.FontFamily" Value="Fonts/#Dosis"/>
+                    <Setter Property="Background" Value="#FE6584"/>
+                    <Setter Property="Cursor" Value="Hand"/>
+
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#FF2C99"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+
+            </Button.Style>
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Width="175" Height="50"
+                                    CornerRadius="12"
+                                    Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"/>
+
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Label x:Name="underScoreLab" FontWeight="SemiBold" HorizontalContentAlignment="Center" Content=" " Foreground="white" HorizontalAlignment="Center" Margin="0,116,0,0" FontSize="33" VerticalAlignment="Top" FontFamily="Courier New" Grid.Column="3"/>
+        <TextBox x:Name="testBox" Visibility="Hidden" HorizontalAlignment="Left" Margin="29,391,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="238" Height="30"/>
+        <Label x:Name="testLab" FontWeight="SemiBold" HorizontalContentAlignment="Center" Foreground="white" HorizontalAlignment="Center" Margin="0,92,0,0" VerticalAlignment="Top" FontSize="33" Content=" " FontFamily="Courier New" Grid.Column="3"/>
+        <Button x:Name="transBut" FontWeight="SemiBold" Content="Submit" HorizontalAlignment="Center" Margin="-500,301,0,0" VerticalAlignment="Top" Click="transBut_Click" FontSize="33" Foreground="White" Height="55" Width="130" Grid.Column="3">
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="TextElement.FontFamily" Value="Fonts/#Dosis"/>
+                    <Setter Property="Background" Value="#FE6584"/>
+                    <Setter Property="Cursor" Value="Hand"/>
+
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#FF2C99"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+
+            </Button.Style>
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Width="120" Height="50"
+                                    CornerRadius="12"
+                                    Background="{TemplateBinding Background}" Margin="0,0,0,0">
+                        <ContentPresenter VerticalAlignment="Center"
+                                                  HorizontalAlignment="Center"/>
+
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <TextBox x:Name="boxx" HorizontalAlignment="Center" TextAlignment="Center" FontFamily="Verdana" Margin="-500,242,0,0" MaxLength="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="64" Height="46" FontSize="33" Grid.Column="3" KeyDown="boxx_KeyDown"/>
+        <Rectangle x:Name="Grass" Visibility="Visible" HorizontalAlignment="Center" Fill="Green" Height="71" Margin="0,368,0,0" Stroke="Black" VerticalAlignment="Top" Width="184"/>
+        <Rectangle x:Name="Sky" Visibility="Visible" HorizontalAlignment="Center" Fill="LightBlue" Height="179" Margin="0,195,0,0" Stroke="Black" VerticalAlignment="Top" Width="184"/>
+        <Label x:Name="tryLab" Foreground="white" Content=" " HorizontalContentAlignment="Center" FontWeight="SemiBold" HorizontalAlignment="Center" Margin="0,157,0,0" VerticalAlignment="Top" FontFamily="Fonts/#Dosis" FontSize="18" Width="185" Grid.Column="3"/>
+        <Canvas HorizontalAlignment="Center" Margin="0,195,175,-5" Grid.Column="3">
+
+
+            <Canvas x:Name="happyMan" Visibility="Hidden" HorizontalAlignment="Center" Margin="0,0,0,0">
+                <Line x:Name="Line22"
+                    X1="15" Y1="20"
+                    X2="15" Y2="20"
+                    Stroke="Black" StrokeStartLineCap="Round"  StrokeEndLineCap="Round" StrokeThickness="5" Canvas.Left="106" Canvas.Top="122" />
+            <Line x:Name="Line21"
+                    X1="15" Y1="20"
+                    X2="15" Y2="20" 
+                    Stroke="Black" StrokeStartLineCap="Round"  StrokeEndLineCap="Round" StrokeThickness="5" Canvas.Left="96" Canvas.Top="122" />
+            <Path x:Name="Line20" Stroke="Black" StrokeThickness="2" Height="7" Stretch="Fill" Width="19" Canvas.Left="107" Canvas.Top="150">
+                <Path.Data>
+                    <PathGeometry>
+                        <PathGeometry.Figures>
+                            <PathFigureCollection>
+                                <PathFigure StartPoint="0,100">
+                                    <PathFigure.Segments>
+                                        <PathSegmentCollection>
+                                            <QuadraticBezierSegment Point1="200,200" Point2="400,100" />
+                                        </PathSegmentCollection>
+                                    </PathFigure.Segments>
+                                </PathFigure>
+                            </PathFigureCollection>
+                        </PathGeometry.Figures>
+                    </PathGeometry>
+                </Path.Data>
+            </Path>
+            <Line x:Name="Line19"
+                    X1="15" Y1="50"
+                    X2="65" Y2="50" 
+                    Stroke="Black" StrokeStartLineCap="Round"  StrokeEndLineCap="Round" StrokeThickness="5" Canvas.Left="75" Canvas.Top="134" />
+            <Line x:Name="Line18"
+                    X1="10" Y1="50"
+                    X2="30" Y2="70" 
+                    Stroke="Black" StrokeStartLineCap="Round"  StrokeEndLineCap="Round" StrokeThickness="5" Canvas.Left="106" Canvas.Top="162" />
+            <Line x:Name="Line17"
+                    X1="10" Y1="50"
+                    X2="-10" Y2="70" 
+                    Stroke="Black" StrokeStartLineCap="Round"  StrokeEndLineCap="Round" StrokeThickness="5" Canvas.Left="106" Canvas.Top="162" />
+            <Line x:Name="Line16"
+                    X1="85" Y1="15"
+                    X2="85" Y2="60" 
+                    Stroke="Black" StrokeStartLineCap="Round"  StrokeEndLineCap="Round" StrokeThickness="5" Canvas.Left="31" Canvas.Top="152" />
+            <Ellipse x:Name="Line15"
+                    Width="41"
+                    Height="39" 
+                    StrokeThickness="5"
+                    Stroke="Black"
+                    Canvas.Left="96"
+                    Canvas.Top="127" />
+            </Canvas>
+
+
+
+            <Line x:Name="Line14"
+                    X1="7" Y1="50"
+                    X2="0" Y2="57" Visibility="Hidden"
+                    Stroke="Black" StrokeStartLineCap="Round"  StrokeEndLineCap="Round" StrokeThickness="2" Canvas.Left="106" Canvas.Top="51" />
+            <Line x:Name="Line13"
+                    X1="0" Y1="50"
+                    X2="7" Y2="57" Visibility="Hidden"
+                    Stroke="Black" StrokeStartLineCap="Round"  StrokeEndLineCap="Round" StrokeThickness="2" Canvas.Left="106" Canvas.Top="51" />
+            <Line x:Name="Line12"
+                    X1="0" Y1="50"
+                    X2="7" Y2="57" Visibility="Hidden"
+                    Stroke="Black" StrokeStartLineCap="Round"  StrokeEndLineCap="Round" StrokeThickness="2" Canvas.Left="119" Canvas.Top="51" />
+            <Line x:Name="Line11"
+                    X1="7" Y1="50"
+                    X2="0" Y2="57" Visibility="Hidden"
+                    Stroke="Black" StrokeStartLineCap="Round"  StrokeEndLineCap="Round" StrokeThickness="2" Canvas.Left="119" Canvas.Top="51" />
+
+            <Line x:Name="Line10"
+                    X1="15" Y1="50"
+                    X2="65" Y2="50" Visibility="Hidden"
+                    Stroke="Black" StrokeStartLineCap="Round"  StrokeEndLineCap="Round" StrokeThickness="5" Canvas.Left="75" Canvas.Top="94" />
+            <Line x:Name="Line9"
+                    X1="10" Y1="50"
+                    X2="30" Y2="70" Visibility="Hidden"
+                    Stroke="Black" StrokeStartLineCap="Round"  StrokeEndLineCap="Round" StrokeThickness="5" Canvas.Left="106" Canvas.Top="122" />
+            <Line x:Name="Line8"
+                    X1="10" Y1="50"
+                    X2="-10" Y2="70" Visibility="Hidden"
+                    Stroke="Black" StrokeStartLineCap="Round"  StrokeEndLineCap="Round" StrokeThickness="5" Canvas.Left="106" Canvas.Top="122" />
+            <Line x:Name="Line7"
+                    X1="85" Y1="15"
+                    X2="85" Y2="60" Visibility="Hidden"
+                    Stroke="Black" StrokeStartLineCap="Round"  StrokeEndLineCap="Round" StrokeThickness="5" Canvas.Left="31" Canvas.Top="112" />
+            <Ellipse x:Name="Line6"
+                    Width="41"
+                    Height="39" Visibility="Hidden"
+                    StrokeThickness="5"
+                    Stroke="Black"
+                    Canvas.Left="96"
+                    Canvas.Top="87" />
+            <Line x:Name="Line5"
+                    X1="85" Y1="10"
+                    X2="85" Y2="60" Visibility="Hidden"
+                    Stroke="Black" StrokeThickness="5" Canvas.Left="31" Canvas.Top="29" />
+            <Line x:Name="Line4"
+                    X1="17" Y1="40"
+                    X2="50" Y2="10" Visibility="Hidden"
+                    Stroke="Black" StrokeThickness="5" Canvas.Left="18" Canvas.Top="29" />
+            <Line x:Name="Line3"
+                    X1="10" Y1="10"
+                    X2="100" Y2="10" Visibility="Hidden"
+                    Stroke="Black" StrokeThickness="5" Canvas.Left="19" Canvas.Top="29" />
+            <Line x:Name="Line2"
+                    X1="10" Y1="10"
+                    X2="10" Y2="200" Visibility="Hidden"
+                    Stroke="Black" StrokeThickness="5" Canvas.Left="25" Canvas.Top="31" />
+            <Line x:Name="Line1"
+                    X1="0" Y1="180"
+                    X2="50" Y2="180"
+                  Visibility="Hidden"
+                    Stroke="Black" StrokeThickness="5" Canvas.Left="11" Canvas.Top="52" />
+
+        </Canvas>
+
+    </Grid>
+</Window>
